@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PM2FoursquareApiAD.Views.FourSquarePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Api Foursquare" x:Name="btnsquare" Clicked="btnsquare_Clicked"></Button>
+
+            <ListView x:Name="listaSitios" HorizontalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions >
+                                    <ColumnDefinition Width="180" />
+                                    <ColumnDefinition Width="175" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackLayout Padding="10,0,0,0">
+                                    <Label Grid.Column="0" Text="{Binding name}" FontAttributes="Bold" FontSize="14" ></Label>
+                                </StackLayout>
+
+                                <Label Grid.Column="1" Text="{Binding location.formattedAddress[0]}" FontAttributes="Bold" FontSize="14"></Label>
+
+                                <Label Grid.Column="2" Text="{Binding location.distance}" FontAttributes="Bold" FontSize="16"></Label>
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
